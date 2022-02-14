@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="rent-section">
+    <div class="rent-text mb-3 mt-3">
+
+      <h2 *ngIf="currentCity" class="rent-text">
+       {{currentCity.cityName + "- Araba Kirala"}}
+      </h2>
+    </div>
+
+  </div>
+
+  <form [formGroup]="rentForm" class="rent-form">
+    <div class="row">
+
+      <div class="form-item col-md-6">
+        Şehir
+        <select (change)="getBranchesByCityId()" [(ngModel)]="currentCity" formControlName="city" name="" class="form-select" id="">
+          <option disabled value="undefined">Şehir Seçin</option>
+          <option [ngValue]="city"  *ngFor="let city of cities" selected value="city">{{city.cityName}}</option>
+        </select>
+
+      </div>
+      <div class="form-item col-md-6">
+        Şube
+        <select [(ngModel)]="currentBranch" formControlName="branch" name="" class="form-select" id="">
+            <option disabled value="undefined">Şube Seçin</option>
+          <option [ngValue]="branch" *ngFor="let branch of branches" value="branch">{{branch.title}}</option>
+        </select>
+      </div>
+      <div class="form-item col-md-6">
+        Alış Saati
+        <input formControlName="rentDate" name="rentDate" class="form-select " type="datetime-local" id="rentDate">
+        <div id="emailHelp" *ngIf="validateRentDate()" class="form-text text-danger">Lütfen bugünden daha ileri bir
+          tarih girin.</div>
+      </div>
+      <div class="form-item col-md-6">
+        Veriş Saati
+        <input formControlName="returnDate" name="" class="form-select " type="datetime-local" id="">
+        <div id="emailHelp" *ngIf="validateReturnDate()" class="form-text text-danger">Alış tarihinizden ileri bir tarih
+          girin.</div>
+
+      </div>
+      <div class="form-item">
+        <button (click)="isAuthenticated()" style="margin-top:1.48rem; " class=" col-md-1 btn btn-outline-success"><i
+            class="fas fa-arrow-right"></i></button>
+            
+                
+      </div>
+    </div>
+
+  </form>
+</div>
+<script src="rent.js"></script>

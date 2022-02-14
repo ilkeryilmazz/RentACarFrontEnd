@@ -1,0 +1,24 @@
+
+<div class="container" >
+  <div   class="row mt-5 mb-5 ">
+    <div *ngFor="let car of cars" class="col-md-4 mb-5 mr-4">
+     
+      <div class="card h-100" style="width: 25rem; ">
+        <img *ngIf="car.images[0]" src="{{baseUrl}}{{car.images[0].imagePath}} "  class="card-img-top " alt="">
+        <img *ngIf="!car.images[0]" src="{{baseUrl}}{{defaultImage}} " class="card-img-top " alt="">
+        <div class="card-body">
+          <h5 class="card-title">{{car.carName}}</h5>
+          <p class="card-text">{{car.description}}</p>
+          <p class="card-text text-danger">Araba müsait değil - Test (Eklenecek)</p>
+          <p class="card-text text-success lead ">{{car.dailyPrice | currency:"₺"}} </p>
+          
+        </div>
+        <div class="card-footer">
+          <a routerLink="/cars/car-extras/{{car.id}}" class="btn btn-success">Kirala</a>
+        </div>
+      </div>
+ 
+  </div></div>
+
+</div>
+

@@ -1,0 +1,106 @@
+<div *ngIf="isAuthenticated()==false" class="d-flex">
+  <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginmodal" type="submit">Kayıt Ol /
+    Giriş Yap</button>
+</div>
+<div *ngIf="isAuthenticated()==true" class="d-flex">
+  <div class="dropdown">
+    <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton1"
+      data-bs-toggle="dropdown" aria-expanded="false">
+      {{name}}
+    </button>
+    <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="#">Hesap Ayarları</a></li>
+      <li><a class="dropdown-item" href="#">Araç Kiralamaları</a></li>
+      <li><a (click)="logout()" class="dropdown-item bg-danger text-white" href="#">Çıkış Yap</a></li>
+    </ul>
+
+  </div>
+</div>
+<div class="modal fade" id="loginmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Giriş Yap</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="loginForm">
+          <div class="mb-3">
+            <label class="form-label">Email Adresi</label>
+            <input formControlName="email" type="email" placeholder="email@email.com" class="form-control" id="email"
+              aria-describedby="emailHelp">
+
+            <div id="emailHelp" *ngIf="loginForm.get('email').invalid" class="form-text text-danger">Lütfen geçerli bir
+              email adresi giriniz.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Şifre</label>
+
+            <input formControlName="password" type="password" class="form-control">
+            <div id="emailHelp" *ngIf="loginForm.get('password').value.length==0" class="form-text text-danger">Lütfen
+              bir şifre giriniz.</div>
+          </div>
+          
+          <button data-bs-dismiss="modal" class="btn btn-primary" (click)="login() ">Giriş Yap</button> <span
+            class="mx-2 text-muted">veya</span>
+          <button class="btn  btn-gray" data-bs-toggle="modal" data-bs-target="#registermodal">Kayıt Ol</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="registermodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Giriş Yap</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="registerForm">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Ad</label>
+            <input formControlName="firstName" type="email" class="form-control" aria-describedby="emailHelp">
+            <div id="emailHelp" *ngIf="registerForm.get('firstName').invalid" class="form-text text-danger">Lütfen adınızı girin.
+              </div>
+              <div id="emailHelp" *ngIf="registerForm.get('firstName').value.length<2" class="form-text text-danger">Ad 2 harfden küçük olamaz.
+              </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Soyad</label>
+            <input formControlName="lastName" type="email" class="form-control" aria-describedby="emailHelp">
+            <div id="emailHelp" *ngIf="registerForm.get('lastName').invalid" class="form-text text-danger">Lütfen soyadınızı girin.
+            </div>
+            <div id="emailHelp" *ngIf="registerForm.get('lastName').value.length<2" class="form-text text-danger">Soyad 2 harfden küçük olamaz.
+            </div>
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email Adresi</label>
+            <input formControlName="email" type="email" class="form-control" aria-describedby="emailHelp">
+            <div id="emailHelp" *ngIf="registerForm.get('email').invalid" class="form-text text-danger">Lütfen geçerli bir
+              email adresi giriniz.</div>
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Şifre</label>
+            <input formControlName="password" type="password" class="form-control">
+            <div id="emailHelp" *ngIf="registerForm.get('password').invalid" class="form-text text-danger">Lütfen bir şifre giriniz.
+              </div>
+          </div>
+
+          <button (click)="register()" class="btn btn-gray">Kayıt Ol</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Kapat</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+  
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar{
+    background-color: #222222!important;
+    
+}
+.nav-link{
+    color: #cdcdcd!important;
+    transition: all .3s;
+}
+.nav-link:hover{
+    color: #F7C303 !important;
+}
+.nav-item-right{
+    float: right;
+}
+.btn-gray{
+    background-color: #222222!important;
+    color: white;
+}

@@ -1,0 +1,130 @@
+.form-select {
+  background-color: #C7C7C7;
+  color: #222222;
+  border-radius: 0;
+  padding: 15px;
+  border: 1px solid #707070;
+  border: none;
+}
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+}
+.form-select:hover{
+  background-color: #707070;
+}
+
+.btn-rent {
+  border: 1px solid #707070;
+  background-color: #C7C7C7;
+  border-radius: 0;
+  padding: 15px 25px;
+
+}
+
+.btn-submit {
+  border: 1px solid #707070;
+  background-color: #C7C7C7;
+  border-radius: 0;
+  padding: 5px 25px;
+  font-weight: bold;
+
+}
+
+option {
+  background-color: #C7C7C7 !important;
+}
+
+
+
+.rent-text {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.slider {
+  width: 95rem !important;
+  margin: 5rem auto;
+}
+
+.slider img {
+  height: 25rem;
+  width: 100%;
+  object-fit: contain;
+}
+
+.contact {
+  margin-top: 10rem;
+}
+
+.contact-text {
+
+  font-weight: bold;
+}
+
+hr {
+  border: 1px solid #000000;
+}
+
+.contact form {}
+
+.containerSize {
+  width: 850px;
+  margin: 2rem auto;
+  font-weight: bold;
+}
+
+.branch-item {
+  float: left;
+  margin: 2px;
+  margin-right: 15px;
+
+}
+
+.branch-item:last-child {
+  margin-bottom: 2.5rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.margin-top {
+  margin-top: 5rem;
+}
+
+.call-text {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.number {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.text-pay {
+  font-size: 1.4rem;
+}
+
+.methods img {
+  margin-right: 1rem;
+}
+
+
+@media (max-width:590px) {
+  #carouselExampleIndicators{
+    display: none;
+  }
+}
+@media (max-width:756px) {
+  #section-c{
+    display: none;
+  }
+  .containerSize{
+    width: 300px;
+  }
+}
+@media (max-width: 1200px) {}
+
+@media (max-width: 1400px) {}

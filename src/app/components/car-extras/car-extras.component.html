@@ -1,0 +1,19 @@
+
+<div class="container" >
+    <div   class="row mt-5 mb-5">
+      <div class="col-md-12">
+        <div class="card" style="width: 100%;">
+          <img src="{{baseUrl}}{{carDetail.images[0].imagePath}} " class="card-img-top" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{carDetail.carName}}</h5>
+            <p class="card-text">{{carDetail.description}}</p>
+            <p class="card-text text-danger">Araba müsait değil - Test (Eklenecek)</p>
+            <p class="card-text text-success lead ">{{carDetail.dailyPrice | currency:"₺"}} </p>
+            <a routerLink="/cars/car-extras/{{carDetail.id}}" class="btn btn-success">Ödemeye Geç</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
